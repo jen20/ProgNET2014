@@ -1,0 +1,26 @@
+﻿<Window x:Class="Ex6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="The World's Worst User Interface" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left">Name:</TextBlock>
+            <TextBox x:Name="FirstName" />
+        </DockPanel>
+        
+        <Button x:Name="GreetUserButton">Greet User</Button>
+        
+        <TextBlock>Entered Text: <Run x:Name="WhatWasEntered" /></TextBlock>
+    </StackPanel>
+</Window>

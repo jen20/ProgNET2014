@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>RaiseAndSetProp</Title>
+      <Shortcut>rasprop</Shortcut>
+      <Description>Generates ReactiveUI RaiseAndSetIfChanged property</Description>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+        <ID>type</ID>
+        <ToolTip>Property type</ToolTip>
+        <Default>string</Default>
+      </Literal>
+		<Literal>
+		  <ID>propName</ID>
+		  <Default>MyNotProp</Default>
+		  <ToolTip>The property name</ToolTip>
+		</Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[private $type$ _$propName$;
+        public $type$ $propName$
+        {
+            get { return _$propName$; }
+            set { this.RaiseAndSetIfChanged(ref _$propName$, value); }
+        }$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

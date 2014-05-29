@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xaml="clr-namespace:ReactiveUI.Xaml;assembly=ReactiveUI.Xaml">
+    <Style TargetType="xaml:ViewModelViewHost">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="Red"></Setter>
+    </Style>
+</ResourceDictionary>

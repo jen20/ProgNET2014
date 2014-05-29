@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Ex7.TweetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Right" x:Name="TweetDate" />
+                <TextBlock x:Name="UserHandle" FontWeight="Bold" />
+            </DockPanel>
+            <TextBlock x:Name="Message"></TextBlock>
+        </DockPanel>
+    </Grid>
+</UserControl>
