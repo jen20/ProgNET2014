@@ -11,8 +11,7 @@ namespace Ex7
         {
             Tweets = new ReactiveList<TweetViewModel>();
 
-            LoadTweets = new ReactiveCommand();
-            LoadTweets.RegisterAsyncTask(async _ =>
+            LoadTweets = ReactiveCommand.CreateAsyncTask(async _ =>
             {
                 await Task.Delay(2000);
                 foreach (var t in FakeData.GetFakeTweets())
@@ -22,12 +21,12 @@ namespace Ex7
             var canRemoveTweet = this.WhenAnyValue(vm => vm.Tweets.Count)
                 .Select(c => c > 0);
 
-            RemoveTweet = new ReactiveCommand(canRemoveTweet);
+            RemoveTweet = ReactiveCommand.Create(canRemoveTweet);
             RemoveTweet.Subscribe(_ => Tweets.RemoveAt(0));
         }
 
         public IReactiveCommand LoadTweets { get; private set; }
-        public IReactiveCommand RemoveTweet { get; private set; }
+        public ReactiveCommand<object> RemoveTweet { get; private set; }
 
         public ReactiveList<TweetViewModel> Tweets { get; private set; }
     }

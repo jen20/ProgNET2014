@@ -1,0 +1,75 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Shortcut/@EntryValue">reaciv</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Description/@EntryValue">Generates the dependency prop for IViewFor</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Text/@EntryValue">public static readonly DependencyProperty ViewModelProperty;&#xD;
+&#xD;
+        static $classname$()        &#xD;
+        {&#xD;
+            ViewModelProperty = DependencyProperty.Register("ViewModel", typeof($classname$Model), typeof($classname$));&#xD;
+        }&#xD;
+&#xD;
+        public $classname$Model ViewModel&#xD;
+        {&#xD;
+            get { return ($classname$Model)GetValue(ViewModelProperty); }&#xD;
+            set { SetValue(ViewModelProperty, value); }&#xD;
+        }&#xD;
+&#xD;
+        object IViewFor.ViewModel&#xD;
+        {&#xD;
+            get { return ViewModel; }&#xD;
+            set { ViewModel = ($classname$Model)value; }&#xD;
+        }$END$</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Field/=classname/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0166747E4FD5D24E813B4FF3FEC8ADED/Field/=classname/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Shortcut/@EntryValue">reacp</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Description/@EntryValue">ReactiveUI Property</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Text/@EntryValue">private $type$ _$propName$;&#xD;
+        public $type$ $propNameCap$&#xD;
+        {&#xD;
+            get { return _$propName$; }&#xD;
+            set { this.RaiseAndSetIfChanged(ref _$propName$, value); }&#xD;
+        }$END$</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=type/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=type/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propName/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propName/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propNameCap/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propNameCap/Expression/@EntryValue">capitalize(propName)</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propNameCap/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C7A22C994418334496F4160D34C3BA7B/Field/=propNameCap/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Shortcut/@EntryValue">reacrop</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Description/@EntryValue">ReactiveUI Read-Only Property</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Text/@EntryValue">private readonly ObservableAsPropertyHelper&lt;$type$&gt; _$propName$;&#xD;
+        public $type$ $propNameFixed$&#xD;
+        {&#xD;
+            get { return _$propName$.Value; }&#xD;
+        }$END$</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=type/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=type/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propName/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propName/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propNameFixed/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propNameFixed/Expression/@EntryValue">capitalize(propName)</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propNameFixed/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A80B218BBD725547A3CE43D55F156028/Field/=propNameFixed/Order/@EntryValue">2</s:Int64></wpf:ResourceDictionary>

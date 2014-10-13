@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ReactiveUI;
 
 namespace Ex9
@@ -25,9 +26,8 @@ namespace Ex9
                 return vm;
             }, m => true, (m, vm) => 0);
 
-            SetUpDataCommand = new ReactiveCommand();
-            SetUpDataCommand.RegisterAsyncTask(_ => _testDataSource.GetTests())
-                .Subscribe(results =>
+            SetUpDataCommand = ReactiveCommand.CreateAsyncTask(_ => _testDataSource.GetTests());
+            SetUpDataCommand.Subscribe(results =>
                 {
                     using (SuppressChangeNotifications())
                     {
@@ -47,6 +47,6 @@ namespace Ex9
 
         public ReactiveList<TestModel> TestModels { get; private set; } 
 
-        public IReactiveCommand SetUpDataCommand { get; private set; }
+        public ReactiveCommand<IEnumerable<TestModel>> SetUpDataCommand { get; private set; }
     }
 }

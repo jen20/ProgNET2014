@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using Splat;
 
 namespace Ex9
 {
@@ -6,7 +7,7 @@ namespace Ex9
     {
         public App()
         {
-            RxApp.MutableResolver.Register(() => new TestView(), typeof(IViewFor<TestViewModel>));
+            Locator.CurrentMutable.Register(() => new TestView(), typeof(IViewFor<TestViewModel>));
 
             var vm = new MainWindowModel();
             var view = new MainWindow {ViewModel = vm};

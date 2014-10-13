@@ -6,11 +6,11 @@ namespace Ex8
 {
     public class MainWindowViewModel : ReactiveObject, IScreen
     {
-        public IRoutingState Router { get; private set; }
+        public RoutingState Router { get; private set; }
 
-        public ReactiveCommand NavigateToACommand { get; private set; }
-        public ReactiveCommand NavigateToBCommand { get; private set; }
-        public ReactiveCommand BackCommand { get; private set; }
+        public ReactiveCommand<object> NavigateToACommand { get; private set; }
+        public ReactiveCommand<object> NavigateToBCommand { get; private set; }
+        public ReactiveCommand<object> BackCommand { get; private set; }
 
         public MainWindowViewModel()
         {
@@ -19,9 +19,9 @@ namespace Ex8
             var canGoBack = this.WhenAnyValue(vm => vm.Router.NavigationStack.Count)
                                 .Select(count => count > 0);
 
-            NavigateToACommand = new ReactiveCommand();
-            NavigateToBCommand = new ReactiveCommand();
-            BackCommand = new ReactiveCommand(canGoBack);
+            NavigateToACommand = ReactiveCommand.Create();
+            NavigateToBCommand = ReactiveCommand.Create();
+            BackCommand = ReactiveCommand.Create(canGoBack);
 
             NavigateToACommand.Subscribe(NavigateToA);
             NavigateToBCommand.Subscribe(NavigateToB);

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Reactive.Linq;
+using System.Threading.Tasks;
 using ReactiveUI;
 
 namespace Ex3
 {
     public class PersonViewModel : ReactiveObject
     {
-        private IObservable<string> PretendToCallTheServer()
+        private async Task<string> PretendToCallTheServer()
         {
-            return Observable.Return("Hello World")
-                .Delay(TimeSpan.FromMilliseconds(2000), RxApp.TaskpoolScheduler);
+            await Task.Delay(2000);
+            return "Hello World";
         } 
 
         public PersonViewModel()
@@ -20,9 +20,8 @@ namespace Ex3
             var firstAndLastFilled = this.WhenAnyValue(vm => vm.FirstName, vm => vm.LastName,
                 (f, l) => !string.IsNullOrWhiteSpace(f) && !string.IsNullOrWhiteSpace(l));
 
-            ChangeName = new ReactiveCommand(firstAndLastFilled);
-            ChangeName.RegisterAsync(_ => PretendToCallTheServer())
-                .Subscribe(r => ServerResult = r);
+            ChangeName = ReactiveCommand.CreateAsyncTask(firstAndLastFilled, _ => PretendToCallTheServer());
+            ChangeName.Subscribe(r => ServerResult = r);
         }
 
         private string _serverResult;
@@ -32,7 +31,7 @@ namespace Ex3
             set { this.RaiseAndSetIfChanged(ref _serverResult, value); }
         }
 
-        public readonly ReactiveCommand ChangeName;
+        public readonly ReactiveCommand<string> ChangeName;
 
         private readonly ObservableAsPropertyHelper<string> _fullName;
         public string FullName

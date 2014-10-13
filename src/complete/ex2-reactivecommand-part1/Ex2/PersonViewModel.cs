@@ -11,7 +11,7 @@ namespace Ex2
 
             var firstAndLastFilled = this.WhenAnyValue(vm => vm.FirstName, vm => vm.LastName,
                 (f, l) => !string.IsNullOrWhiteSpace(f) && !string.IsNullOrWhiteSpace(l));
-            ChangeName = new ReactiveCommand(firstAndLastFilled);
+            ChangeName = ReactiveCommand.Create(firstAndLastFilled);
         }
 
         public readonly IReactiveCommand ChangeName;

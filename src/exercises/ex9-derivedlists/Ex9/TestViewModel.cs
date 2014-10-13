@@ -27,12 +27,12 @@ namespace Ex9
 
         public TestModel OriginalModel { get; set; }
 
-        public IReactiveCommand DoStuffWithThisCommand { get; private set; }
+        public ReactiveCommand<object> DoStuffWithThisCommand { get; private set; }
 
         public TestViewModel()
         {
             var canDoStuffWithThisCommand = this.WhenAnyValue(vm => vm.OtherValue, s => !string.IsNullOrWhiteSpace(s));
-            DoStuffWithThisCommand = new ReactiveCommand(canDoStuffWithThisCommand);
+            DoStuffWithThisCommand = ReactiveCommand.Create(canDoStuffWithThisCommand);
         }
     }
 }
