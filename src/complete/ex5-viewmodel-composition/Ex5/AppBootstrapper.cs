@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using Splat;
 
 namespace Ex5
 {
@@ -12,7 +13,7 @@ namespace Ex5
 
         private void ConfigureServiceLocator()
         {
-            var sl = RxApp.MutableResolver;
+            var sl = Locator.CurrentMutable;
 
             sl.Register(() => new TitleBarView(), typeof(IViewFor<TitleBarViewModel>));
         }

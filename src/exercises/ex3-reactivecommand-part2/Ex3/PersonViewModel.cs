@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 using ReactiveUI;
 
 namespace Ex3
 {
     public class PersonViewModel : ReactiveObject
     {
-        private IObservable<string> PretendToCallTheServer()
+        private async Task<string> PretendToCallTheServer()
         {
-            return Observable.Return("Hello World")
-                .Delay(TimeSpan.FromMilliseconds(2000), RxApp.TaskpoolScheduler);
+            await Task.Delay(2000);
+            return "Hello World";
         } 
 
         public PersonViewModel()
@@ -20,15 +21,14 @@ namespace Ex3
             var firstAndLastFilled = this.WhenAnyValue(vm => vm.FirstName, vm => vm.LastName,
                 (f, l) => !string.IsNullOrWhiteSpace(f) && !string.IsNullOrWhiteSpace(l));
 
-            ChangeName = new ReactiveCommand(firstAndLastFilled);
-
-            //TODO: Register the `PretendToCallTheServer` method as the async operation of the
+            //TODO: Initialize ChangeName command as Async Task and
+            //      register the `PretendToCallTheServer` method as the async operation of the
             //      ChangeName command and store the returned value in `ServerResult`
         }
 
         //TODO: Add a read-write property named ServerResult
 
-        public readonly ReactiveCommand ChangeName;
+        public readonly ReactiveCommand<string> ChangeName;
 
         private readonly ObservableAsPropertyHelper<string> _fullName;
         public string FullName

@@ -7,10 +7,10 @@ namespace Ex6
         public MainWindowModel()
         {
             var canGreet = this.WhenAnyValue(vm => vm.FirstName, n => !string.IsNullOrWhiteSpace(n));
-            GreetUser = new ReactiveCommand(canGreet);
+            GreetUser = ReactiveCommand.Create(canGreet);
         }
 
-        public readonly ReactiveCommand GreetUser;
+        public readonly ReactiveCommand<object> GreetUser;
 
         private string _firstName;
         public string FirstName

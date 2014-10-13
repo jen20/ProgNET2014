@@ -1,4 +1,5 @@
-﻿using Microsoft.Reactive.Testing;
+﻿using System.Reactive.Linq;
+using Microsoft.Reactive.Testing;
 using NUnit.Framework;
 using ReactiveUI.Testing;
 
@@ -10,12 +11,12 @@ namespace Ex3.Tests
         [Test]
         public void ChangeNamePretendsToCallServerButOurTestRunsFast()
         {
-            (new TestScheduler()).With(sched =>
+            (new TestScheduler()).With(async sched =>
             {
                 var sut = new PersonViewModel {FirstName = "Jane", LastName = "Appleseed"};
                 Assert.IsTrue(sut.ChangeName.CanExecute(null));
 
-                sut.ChangeName.Execute(null);
+                await sut.ChangeName.ExecuteAsync();
 
                 sched.AdvanceByMs(1000);
                 Assert.AreEqual(null, sut.ServerResult);

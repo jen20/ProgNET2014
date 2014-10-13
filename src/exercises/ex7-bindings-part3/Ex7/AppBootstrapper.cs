@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using Splat;
 
 namespace Ex7
 {
@@ -12,7 +13,7 @@ namespace Ex7
 
         private void ConfigureServiceLocator()
         {
-            var sl = RxApp.MutableResolver;
+            var sl = Locator.CurrentMutable;
 
             //TODO: Add code to register the TweetView for the type IViewFor<TweetViewModel>
         }

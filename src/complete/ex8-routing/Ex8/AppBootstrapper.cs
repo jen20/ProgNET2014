@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using Splat;
 
 namespace Ex8
 {
@@ -15,13 +16,13 @@ namespace Ex8
         private MainWindowViewModel MakeAndRegisterMainViewModel()
         {
             var vm = new MainWindowViewModel();
-            RxApp.MutableResolver.RegisterConstant(vm, typeof(IScreen));
+            Locator.CurrentMutable.RegisterConstant(vm, typeof(IScreen));
             return vm;
         }
 
         private void RegisterViews()
         {
-            var ioc = RxApp.MutableResolver;
+            var ioc = Locator.CurrentMutable;
 
             ioc.Register(() => new ViewA(), typeof (IViewFor<ViewModelA>));
             ioc.Register(() => new ViewB(), typeof(IViewFor<ViewModelB>));
