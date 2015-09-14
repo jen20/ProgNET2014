@@ -9,8 +9,9 @@ namespace Ex3
     {
         private async Task<string> PretendToCallTheServer()
         {
-            await Task.Delay(2000);
-            return "Hello World";
+            return await Observable.Return("Hello World")
+                .Delay(TimeSpan.FromSeconds(2), RxApp.TaskpoolScheduler)
+                .FirstAsync();
         } 
 
         public PersonViewModel()
